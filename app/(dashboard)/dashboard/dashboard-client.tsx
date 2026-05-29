@@ -223,8 +223,6 @@ export default function DashboardClient({ initialAssets }: { initialAssets: any[
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
-                  activeIndex={activeIndex}
-                  activeShape={renderActiveShape}
                   data={pieData}
                   innerRadius={60}
                   outerRadius={80}
@@ -238,7 +236,7 @@ export default function DashboardClient({ initialAssets }: { initialAssets: any[
                   ))}
                 </Pie>
                 <Tooltip 
-                  formatter={(value: number) => formatCurrency(value)}
+                  formatter={(value: any) => formatCurrency(Number(value) || 0)}
                   contentStyle={{ background: "var(--bg-elevated)", border: "1px solid var(--border-default)", borderRadius: "8px" }}
                   itemStyle={{ color: "var(--text-primary)", fontWeight: 600 }}
                 />
@@ -313,8 +311,8 @@ export default function DashboardClient({ initialAssets }: { initialAssets: any[
                       </div>
                     </td>
                     <td>
-                      <div className="badge" style={{ background: `${assetTypeColor[asset.type]}15`, color: assetTypeColor[asset.type], border: `1px solid ${assetTypeColor[asset.type]}30` }}>
-                        {assetTypeLabel[asset.type]}
+                      <div className="badge" style={{ background: `${assetTypeColor[asset.type as AssetType]}20`, color: assetTypeColor[asset.type as AssetType], border: `1px solid ${assetTypeColor[asset.type as AssetType]}30` }}>
+                        {assetTypeLabel[asset.type as AssetType]}
                       </div>
                     </td>
                     <td style={{ textAlign: "right", fontWeight: 600 }}>{asset.quantity}</td>
