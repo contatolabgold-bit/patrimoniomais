@@ -444,8 +444,8 @@ export default function PortfolioClient({ initialAssets, subscriptionStatus }: {
 
                       {/* Tipo */}
                       <td>
-                        <div className="badge" style={{ background: `${assetTypeColor[asset.type]}15`, color: assetTypeColor[asset.type], border: `1px solid ${assetTypeColor[asset.type]}30` }}>
-                          {assetTypeLabel[asset.type]}
+                        <div className="badge" style={{ background: `${assetTypeColor[asset.type as AssetType]}20`, color: assetTypeColor[asset.type as AssetType], border: `1px solid ${assetTypeColor[asset.type as AssetType]}30` }}>
+                          {assetTypeLabel[asset.type as AssetType]}
                         </div>
                       </td>
 

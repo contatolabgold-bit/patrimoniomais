@@ -13,7 +13,7 @@ import {
 import { 
   calcPortfolioMetrics, 
   formatCurrency, formatPercent, formatCompact,
-  assetTypeColor, assetTypeLabel, Asset
+  assetTypeColor, assetTypeLabel, Asset, AssetType
 } from "@/lib/mock-data";
 import { getPortfolioSnapshots } from "@/app/actions/snapshots";
 
